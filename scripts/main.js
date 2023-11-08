@@ -32,14 +32,24 @@ function comprobar() {
             // Divide el número ingresado en dígitos
             let numeroSeparado = numero.split('');
             console.log(numeroSeparado);
-    
+
+            
             for (let i = 0; i < 5; i++) {
                 // Crea un div para mostrar cada dígito y lo agrega con retraso
                 setTimeout(function() {
+                    
                     const divCreado = document.createElement("div");
                     divCreado.className = "celdasNuevas";
                     divCreado.innerHTML = numeroSeparado[i];
                     document.getElementById("celdasGeneradas").appendChild(divCreado);
+
+                    if (i === 0) {
+                        document.getElementById("inputComprobar").setAttribute("disabled", "true");
+                    }
+                    if (i === 4) {
+                        // Reactiva el botón cuando se muestran los 5 recuadros
+                        document.getElementById("inputComprobar").removeAttribute("disabled");
+                    }
     
                     // Comprueba si el dígito es correcto (verde) o está en la posición correcta (amarillo)
                     if (numeroSeparado[i] === numeroAleatorioSeparado[i]) {
@@ -53,7 +63,7 @@ function comprobar() {
                     }
                 }, i * retraso); // Aplica el retraso para la animación
             }
-    
+
             intentos++;
     
             // Comprueba si el usuario adivinó el número secreto
@@ -97,6 +107,11 @@ function comprobar() {
             document.getElementById("mensaje").innerHTML = "Ingresa un número de 5 dígitos.";
         }
     }
+    $(document).keypress(function(e){
+        if (e.which == 13) {
+            comprobar(); // Llama a la función comprobar() cuando se presiona Enter
+        }
+    });
 }
 
 
