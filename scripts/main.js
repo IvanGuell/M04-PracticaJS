@@ -31,7 +31,6 @@ function comprobar() {
         if (/^\d{5}$/.test(numero)) {
             // Divide el número ingresado en dígitos
             let numeroSeparado = numero.split('');
-            console.log(numeroSeparado);
 
             
             for (let i = 0; i < 5; i++) {
@@ -107,11 +106,7 @@ function comprobar() {
             document.getElementById("mensaje").innerHTML = "Ingresa un número de 5 dígitos.";
         }
     }
-    $(document).keypress(function(e){
-        if (e.which == 13) {
-            comprobar(); // Llama a la función comprobar() cuando se presiona Enter
-        }
-    });
+    
 }
 
 
