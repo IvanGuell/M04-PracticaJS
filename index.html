@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nurmdle</title>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+        <script src="scripts/main.js"></script>
+    </head>
+    <body>
+        <main>
+            <h1 id="cabecera">Adivina el número secreto</h1>
+
+            <div id="containerMain">
+                <div id="containerCeldas">
+                    <div class="divCelda">
+                        <h2 id="celda1">*</h2>
+                    </div>
+                    <div class="divCelda">
+                        <h2 id="celda2">*</h2>
+                    </div>
+                    <div class="divCelda">
+                        <h2 id="celda3">*</h2>
+                    </div>
+                    <div class="divCelda">
+                        <h2 id="celda4">*</h2>
+                    </div>
+                    <div class="divCelda">
+                        <h2 id="celda5">*</h2>
+                    </div>
+                </div>
+                <div id="containerInput">
+                    <h3>Escribe aquí un número</h3>
+                    <input id="inputNumero" type="text" placeholder="01234">
+                    <hr>
+                    <div id="divinput">
+                        <button id="inputComprobar" onclick="comprobar()">Comprobar</button>  
+                    </div>
+                </div>
+                <div id="mensaje">
+                    Tienes 5 intentos. ¡Buena suerte!
+                </div>
+                <div id="celdasGeneradas"></div>
+                <div id="confeti-container"></div>
+            </div>
+        </main>
+    </body>
+</html>
