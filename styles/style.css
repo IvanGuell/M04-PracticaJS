@@ -63,7 +63,10 @@
     width: 20%;
     text-align: center;
 }
-
+#inputNumero::placeholder {
+    color: gray;
+    font-style: italic;
+  }
 #divinput{
     width: 95%;
     margin-left: 2.5%;
